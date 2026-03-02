@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZCC_CIT_DA_TBLELE'
+@MappingRole: true
+define role ZZCC_CIT_DA_TBLELE {
+  grant select on ZZCC_CIT_DA_TBLELE
+  where INHERITING CONDITIONS FROM ENTITY ZZCR_CIT_DA_TBLELE REPLACING { ROOT WITH _BaseEntity };
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZZCC_CIT_DA_TBLELE'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZZCC_CIT_DA_TBLELE'
+  }
+}
+define service ZZCUI_ZCIT_DA_TBLE_O4LE provider contracts odata_v4_ui {
+  expose ZZCC_CIT_DA_TBLELE;
+}

@@ -1,0 +1,52 @@
+managed implementation in class ZZCBP_R_CIT_DA_TBLELE unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZCR_CIT_DA_TBLELE alias ZzcrCitDaTblele
+persistent table ZCIT_DA_TBLE
+extensible
+draft table ZZCCT_DA_TBL_DLE
+etag master LastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   BookID;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt;
+
+  field ( readonly : update )
+   BookID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZCIT_DA_TBLE corresponding extensible
+  {
+    BookID = BOOK_ID;
+    Title = TITLE;
+    Author = AUTHOR;
+    Publisher = PUBLISHER;
+    PublishYear = PUBLISH_YEAR;
+    Category = CATEGORY;
+    AvailableCopies = AVAILABLE_COPIES;
+    TotalCopies = TOTAL_COPIES;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+  }
+
+}
